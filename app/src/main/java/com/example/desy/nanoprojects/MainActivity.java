@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 
@@ -40,59 +41,21 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void displayToast(View view) {
 
-    /** Called when the user touches the button */
-    public void MyAppSendMessage(View view) {
+        Button button = (Button) view;
+
+        String buttonText = (String) button.getText();
+
         Context context = getApplicationContext();
-        CharSequence text = "This button will launch my app";
+        // open_app would add "Opens the app "
+        CharSequence text = getString(R.string.open_app)
+                + buttonText;
         int duration = Toast.LENGTH_SHORT;
 
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
     }
 
-    public void SpotifySendMessage(View view) {
-        Context context = getApplicationContext();
-        CharSequence text = "This button will launch Spotify app";
-        int duration = Toast.LENGTH_SHORT;
 
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-    }
-
-    public void SuperDuoSendMessage(View view) {
-        Context context = getApplicationContext();
-        CharSequence text = "This button will launch Super Duo";
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-    }
-
-    public void BuildBiggerSendMessage(View view) {
-        Context context = getApplicationContext();
-        CharSequence text = "This button will launch Build it Bigger";
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-    }
-
-    public void XYZSendMessage(View view) {
-        Context context = getApplicationContext();
-        CharSequence text = "This button will launch XYZ Reader";
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-    }
-
-    public void CapstoneSendMessage(View view) {
-        Context context = getApplicationContext();
-        CharSequence text = "This button will launch Capstone";
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-    }
 }
